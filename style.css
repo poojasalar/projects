@@ -1,0 +1,186 @@
+/* General Body Styles with Linear Gradient Background */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(135deg, #7368ea, #f5e8f2); /* Purple to Blue Gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Title Styling */
+  h1 {
+    font-size: 36px;
+    color: white;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Player Input Section */
+  .player-input {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    width: 200px;
+    text-align: center;
+  }
+  
+  input:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #2816f3, #ec2abf); /* Orange to Red gradient */
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #e64a19, #f57c00);
+  }
+  
+  button:active {
+    background: linear-gradient(135deg, #d32f2f, #e65100);
+  }
+  
+  /* Game Board Styling */
+  #game-board {
+    margin-top: 30px;
+    display: none;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .cell:hover {
+    background: white;
+    transform: scale(1.1);
+  }
+  
+  .cell:active {
+    background: #ec2abf;
+    transform: scale(0.9);
+  }
+
+  #restart-container {
+    margin-top: 30px;
+    display: none;
+  }
+  
+  #restart-container button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #2816f3, #ec2abf);
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #restart-container button:hover {
+    background: linear-gradient(135deg, #E64A19, #F57C00);
+  }
+  
+  #restart-container button:active {
+    background: linear-gradient(135deg, #D32F2F, #E65100);
+  }
+
+  #fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+  }
+  
+  @keyframes explode {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 80px);
+      grid-template-rows: repeat(3, 80px);
+    }
+  
+    .cell {
+      width: 80px;
+      height: 80px;
+      font-size: 2rem;
+    }
+  
+    input {
+      width: 150px;
+    }
+  
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  }
+  
+  .winner {
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700;
+  }
+  
